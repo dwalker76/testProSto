@@ -1,3 +1,6 @@
 language: c++
 compiler: clang
 os: osx
+notifications:
+  email:
+    - alexey76@yandex.ru
