@@ -1,10 +1,11 @@
 CC = clang++
 CFLAGS = -g -Wall
 TARGETS = output
-all:main.o
+OBJS = main.cpp
 
-main.o:
-	${CC} $(CFLAGS) main.cpp
+result : main.cpp
+	${CC} -o result ${OBJS}
 
-clear:
-	rm *.o
+clean:
+	rm *.o 
+	rm -r *.dSYM
