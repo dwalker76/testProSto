@@ -1,9 +1,10 @@
 CC = clang++
+CFLAGS = -g -Wall
+TARGETS = output
 all:main.o
 
 main.o:
-	${CC} main.cpp
-
+	${CC} $(CFLAGS) main.cpp
 
 clear:
 	rm *.o
