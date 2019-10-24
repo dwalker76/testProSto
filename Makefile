@@ -1,11 +1,18 @@
 CC = clang++
 CFLAGS = -g -Wall
-TARGETS = output
-OBJS = main.cpp
+COMPILE = -c
+TARGET = output
+OBJS = DataSender.o
+SRC = DataSender.cpp
+MAIN_SRC = main.cpp
+LIBS = libs
 
-result : main.cpp
-	${CC} -o result ${OBJS}
+${TARGET} : ${OBJS} 
+	${CC} -o ${TARGET} ${MAIN_SRC} ${OBJS}
+
+${OBJS}:
+	${CC} ${COMPILE}  ${LIBS}/${SRC}
 
 clean:
 	rm *.o 
-	rm -r *.dSYM
+	rm ${TARGET}
